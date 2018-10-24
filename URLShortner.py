@@ -76,16 +76,16 @@ def main_func():
     while original_url != "":
         surl= get_short_url(original_url)
         print("")
-        print("corresponding short url: ",surl)
+        print("corresponding short URL: ",surl)
         print("")
     
-        surl_ip = input("Enter short url: ")
+        surl_ip = input("Enter short URL: ")
         lurl = get_long_url(surl_ip)
         print("")
         if(lurl == ''):
             print("short url does not exist")
         else:
-            print("Corresponding original url: ",lurl)
+            print("Corresponding original URL: ",lurl)
         is_first_url = False
         print("")
         original_url = input("Enter URL: ")

@@ -4,7 +4,7 @@ from urllib.parse import urlsplit
 import re
 
 # no of digits for initial unique id generation
-NO_OF_DIGITS = 6
+NO_OF_DIGITS = 10
 
 # List consisting of allowed charcters in URL
 character_set =['-','_']
@@ -39,7 +39,7 @@ def get_short_url(original_url):
         unique_id = URLtoID[original_url]
     else:
         unique_id = get_unique_number()
-        base_url = "{0.scheme}://{0.netloc}/".format(urlsplit(original_url))
+    base_url = "{0.scheme}://{0.netloc}/".format(urlsplit(original_url))
                     
     short_url = ''
     while(bool(re.match('[0-9\_\-]+[A-Za-z1-9\-\_]*', short_url)) or short_url == '') :
@@ -89,7 +89,5 @@ def main_func():
         is_first_url = False
         print("")
         original_url = input("Enter URL: ")
-
-
 if __name__== "__main__":
     main_func()
